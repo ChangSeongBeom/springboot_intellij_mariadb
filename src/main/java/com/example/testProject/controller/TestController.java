@@ -1,6 +1,7 @@
 package com.example.testProject.controller;
 
 import com.example.testProject.dao.TestDAO;
+import com.example.testProject.dao.TestImpl;
 import com.example.testProject.dto.TestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,10 @@ import java.util.List;
 @RequestMapping("/api")
 public class TestController {
     @Autowired
-    private TestDAO testDAO;
+    private TestImpl testimpl;
 
     @GetMapping("/hello")
     public List<TestDTO> HelloWorld() {
-        return testDAO.getTestData();
+        return testimpl.getTestData();
     }
 }
